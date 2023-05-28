@@ -54,7 +54,7 @@ namespace Sefer_otomasyon
             komut.Parameters.AddWithValue("@p6", Msktxtmail.Text);
             komut.ExecuteNonQuery();
             db.Close();
-            MessageBox.Show("Yolcu Bilgisi Sisteme Kaydedildi.", "Blgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Yolcu Bilgisi Sisteme Kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
