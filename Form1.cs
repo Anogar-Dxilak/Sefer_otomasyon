@@ -63,108 +63,42 @@ namespace Sefer_otomasyon
             dataGridView2.DataSource = dt;
         }
 
+        private void SeferNoDegisti()
+        {
+            
+            Btn1.Enabled = true;
+            Btn1.BackColor = DefaultBackColor;
+            Btn2.Enabled = true;
+            Btn2.BackColor = DefaultBackColor;
+            
+
+            
+            veritabanı_dolu_koltuklar();
+        }
+
+
         private void veritabanı_dolu_koltuklar()
         {
             db.Open();
-            MySqlCommand komut = new MySqlCommand("select * from yolculuk_bilgileri where seferno='" + Txtsefernumarası.Text + "' And koltuk='" + Txtkoltukno.Text + "'", db);
+            MySqlCommand komut = new MySqlCommand("SELECT koltuk FROM yolculuk_bilgileri WHERE seferno = @seferno", db);
+            komut.Parameters.AddWithValue("@seferno", Txtsefernumarası.Text);
             MySqlDataReader read = komut.ExecuteReader();
-            Txtkoltukno.Text = "1";
-            int koltukno = int.Parse(Txtkoltukno.Text);
-            while (read.Read()) 
-            { 
-                if (koltukno == 1)
+            
+            while (read.Read())
             {
-                    Btn1.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 2)
-            {
-                    Btn2.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 3)
+                int koltukno = read.GetInt32("koltuk");
+                Button button = Controls.Find("Btn" + koltukno, true).FirstOrDefault() as Button;
+
+                if (button != null)
                 {
-                    Btn3.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 4)
-                {
-                    Btn4.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 5)
-                {
-                    Btn5.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 6)
-                {
-                    Btn6.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 7)
-                {
-                    Btn7.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 8)
-                {
-                    Btn8.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 9)
-                {
-                    Btn9.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 10)
-                {
-                    Btn10.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 11)
-                {
-                    Btn11.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 12)
-                {
-                    Btn12.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 13)
-                {
-                    Btn13.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 14)
-                {
-                    Btn14.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 15)
-                {
-                    Btn15.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 16)
-                {
-                    Btn16.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 17)
-                {
-                    Btn17.Enabled = false;
-                    BackColor = Color.Red;
-                }
-                if (koltukno == 18)
-                {
-                    Btn18.Enabled = false;
-                    BackColor = Color.Red;
+                    button.Enabled = false;
+                    button.BackColor = Color.Red;
                 }
             }
-            db.Close();  
+
+            db.Close();
         }
+
         private void BtnBiletal_Click(object sender, EventArgs e)
         {
             db.Open();
@@ -340,7 +274,7 @@ namespace Sefer_otomasyon
         private void Güncelle_Click(object sender, EventArgs e)
         {
             değiştirilmişyolculistesi();
-            veritabanı_dolu_koltuklar();
+            SeferNoDegisti();
        
         }
     }

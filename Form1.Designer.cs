@@ -29,7 +29,7 @@ namespace Sefer_otomasyon
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn17 = new System.Windows.Forms.Button();
             this.Btn14 = new System.Windows.Forms.Button();
@@ -97,11 +97,11 @@ namespace Sefer_otomasyon
             this.Txtsefernumarası = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Güncelle = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Güncelle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -832,6 +832,16 @@ namespace Sefer_otomasyon
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             // 
+            // Güncelle
+            // 
+            this.Güncelle.Location = new System.Drawing.Point(102, 65);
+            this.Güncelle.Name = "Güncelle";
+            this.Güncelle.Size = new System.Drawing.Size(159, 59);
+            this.Güncelle.TabIndex = 0;
+            this.Güncelle.Text = "Yolcu Listesini Güncelle";
+            this.Güncelle.UseVisualStyleBackColor = true;
+            this.Güncelle.Click += new System.EventHandler(this.Güncelle_Click);
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.dataGridView1);
@@ -844,13 +854,13 @@ namespace Sefer_otomasyon
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 20);
@@ -878,16 +888,6 @@ namespace Sefer_otomasyon
             this.dataGridView2.Size = new System.Drawing.Size(399, 193);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // Güncelle
-            // 
-            this.Güncelle.Location = new System.Drawing.Point(102, 65);
-            this.Güncelle.Name = "Güncelle";
-            this.Güncelle.Size = new System.Drawing.Size(159, 59);
-            this.Güncelle.TabIndex = 0;
-            this.Güncelle.Text = "Yolcu Listesini Güncelle";
-            this.Güncelle.UseVisualStyleBackColor = true;
-            this.Güncelle.Click += new System.EventHandler(this.Güncelle_Click);
             // 
             // Form1
             // 
