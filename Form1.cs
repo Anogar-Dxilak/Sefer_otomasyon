@@ -56,5 +56,32 @@ namespace Sefer_otomasyon
             db.Close();
             MessageBox.Show("Yolcu Bilgisi Sisteme Kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void Btnsfr_Click(object sender, EventArgs e)
+        {
+            db.Open();
+            MySqlCommand komut = new MySqlCommand("insert into şöför (sfrno,AdSoyad,Telefon) values (@p1,@p2,@p3)", db);
+            komut.Parameters.AddWithValue("@p1", Txtsoforno.Text);
+            komut.Parameters.AddWithValue("@p2", Txtsfradsoyad.Text);
+            komut.Parameters.AddWithValue("@p3", Msktxtsfrtel.Text);
+            komut.ExecuteNonQuery();
+            db.Close();
+            MessageBox.Show("Şöför Bilgisi Sisteme Kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            db.Open();
+            MySqlCommand komut = new MySqlCommand("insert into sefer_bilgiler (kalkis,varis,tarih,saat,şöför,fiyat) values (@p1,@p2,@p3,@p4,@p5,@p6)", db);
+            komut.Parameters.AddWithValue("@p1", Txtkalkis.Text);
+            komut.Parameters.AddWithValue("@p2", Txtvaris.Text);
+            komut.Parameters.AddWithValue("@p3", Msktxttarih.Text);
+            komut.Parameters.AddWithValue("@p4", Msktxtsaat.Text);
+            komut.Parameters.AddWithValue("@p5", Msktxtsofor.Text);
+            komut.Parameters.AddWithValue("@p6", Txtfiyat.Text);
+            komut.ExecuteNonQuery();
+            db.Close();
+            MessageBox.Show("Sefer Bilgisi Sisteme Kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
     }
 }

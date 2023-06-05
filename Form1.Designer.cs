@@ -511,6 +511,7 @@ namespace Sefer_otomasyon
             this.button2.TabIndex = 22;
             this.button2.Text = "Sefer Oluştur";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Txtfiyat
             // 
@@ -656,6 +657,7 @@ namespace Sefer_otomasyon
             this.Btnsfr.TabIndex = 17;
             this.Btnsfr.Text = "Şöför";
             this.Btnsfr.UseVisualStyleBackColor = false;
+            this.Btnsfr.Click += new System.EventHandler(this.Btnsfr_Click);
             // 
             // Msktxtsfrtel
             // 
