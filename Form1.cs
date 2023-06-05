@@ -39,8 +39,132 @@ namespace Sefer_otomasyon
         MySqlConnection db = new MySqlConnection(@"datasource=localhost;port=3306;
         user=root;database=yolcu-bilet;password=");
 
+        void seferlistesi()
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("Select * From sefer_bilgiler", db);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
 
+        void yolculistesi()
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("Select * From yolculuk_bilgileri", db);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView2.DataSource = dt;
+        }
 
+        void değiştirilmişyolculistesi()
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("Select * From yolculuk_bilgileri where seferno = '" + Txtsefernumarası.Text + "'", db);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView2.DataSource = dt;
+        }
+
+        private void veritabanı_dolu_koltuklar()
+        {
+            db.Open();
+            MySqlCommand komut = new MySqlCommand("select * from yolculuk_bilgileri where seferno='" + Txtsefernumarası.Text + "' And koltuk='" + Txtkoltukno.Text + "'", db);
+            MySqlDataReader read = komut.ExecuteReader();
+            Txtkoltukno.Text = "1";
+            int koltukno = int.Parse(Txtkoltukno.Text);
+            while (read.Read()) 
+            { 
+                if (koltukno == 1)
+            {
+                    Btn1.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 2)
+            {
+                    Btn2.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 3)
+                {
+                    Btn3.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 4)
+                {
+                    Btn4.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 5)
+                {
+                    Btn5.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 6)
+                {
+                    Btn6.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 7)
+                {
+                    Btn7.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 8)
+                {
+                    Btn8.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 9)
+                {
+                    Btn9.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 10)
+                {
+                    Btn10.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 11)
+                {
+                    Btn11.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 12)
+                {
+                    Btn12.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 13)
+                {
+                    Btn13.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 14)
+                {
+                    Btn14.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 15)
+                {
+                    Btn15.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 16)
+                {
+                    Btn16.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 17)
+                {
+                    Btn17.Enabled = false;
+                    BackColor = Color.Red;
+                }
+                if (koltukno == 18)
+                {
+                    Btn18.Enabled = false;
+                    BackColor = Color.Red;
+                }
+            }
+            db.Close();  
+        }
         private void BtnBiletal_Click(object sender, EventArgs e)
         {
             db.Open();
@@ -82,6 +206,142 @@ namespace Sefer_otomasyon
             komut.ExecuteNonQuery();
             db.Close();
             MessageBox.Show("Sefer Bilgisi Sisteme Kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            seferlistesi();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            seferlistesi();
+            yolculistesi();
+            veritabanı_dolu_koltuklar();
+            
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = dataGridView1.SelectedCells[0].RowIndex;
+            Txtsefernumarası.Text = dataGridView1.Rows[secilen].Cells[0].Value.ToString();
+           
+        }
+
+        private void Btn1_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "1";
+            
+        }
+
+        private void Btn2_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "2";
+        }
+
+        private void Btn3_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "3";
+        }
+
+        private void Btn4_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "4";
+        }
+
+        private void Btn5_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "5";
+        }
+
+        private void Btn6_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "6";
+        }
+
+        private void Btn7_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "7";
+        }
+
+        private void Btn8_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "8";
+        }
+
+        private void Btn9_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "9";
+        }
+
+        private void Btn10_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "10";
+        }
+
+        private void Btn11_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "11";
+        }
+
+        private void Btn12_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "12";
+        }
+
+        private void Btn13_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "13";
+        }
+
+        private void Btn14_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "14";
+        }
+
+        private void Btn15_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "15";
+        }
+
+        private void Btn16_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "16";
+        }
+
+        private void Btn17_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "17";
+        }
+
+        private void Btn18_Click(object sender, EventArgs e)
+        {
+            Txtkoltukno.Text = "18";
+        }
+
+        private void Btnrezervasyon_Click(object sender, EventArgs e)
+        {
+            db.Open();
+            MySqlCommand komut = new MySqlCommand("insert into yolculuk_bilgileri (seferno,yolcutc,koltuk) values (@p1,@p2,@p3)", db);
+            komut.Parameters.AddWithValue("@p1", Txtsefernumarası.Text);
+            komut.Parameters.AddWithValue("@p2", Msktxtyolcutc.Text);
+            komut.Parameters.AddWithValue("@p3", Txtkoltukno.Text);
+            komut.ExecuteNonQuery();
+            db.Close();
+            MessageBox.Show("Rezarvasyon Bilgisi Sisteme Kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            yolculistesi();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Güncelle_Click(object sender, EventArgs e)
+        {
+            değiştirilmişyolculistesi();
+            veritabanı_dolu_koltuklar();
+       
         }
     }
 }

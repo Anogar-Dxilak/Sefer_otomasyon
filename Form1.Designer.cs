@@ -29,6 +29,7 @@ namespace Sefer_otomasyon
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn17 = new System.Windows.Forms.Button();
             this.Btn14 = new System.Windows.Forms.Button();
@@ -89,18 +90,28 @@ namespace Sefer_otomasyon
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txtkoltukno = new System.Windows.Forms.TextBox();
             this.Btnrezervasyon = new System.Windows.Forms.Button();
             this.Msktxtyolcutc = new System.Windows.Forms.MaskedTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.Txtsefernumarası = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Güncelle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -126,7 +137,7 @@ namespace Sefer_otomasyon
             this.groupBox1.Controls.Add(this.Btn16);
             this.groupBox1.Location = new System.Drawing.Point(10, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 395);
+            this.groupBox1.Size = new System.Drawing.Size(412, 395);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -140,6 +151,7 @@ namespace Sefer_otomasyon
             this.Btn17.TabIndex = 24;
             this.Btn17.Text = "17";
             this.Btn17.UseVisualStyleBackColor = false;
+            this.Btn17.Click += new System.EventHandler(this.Btn17_Click);
             // 
             // Btn14
             // 
@@ -151,6 +163,7 @@ namespace Sefer_otomasyon
             this.Btn14.TabIndex = 23;
             this.Btn14.Text = "14";
             this.Btn14.UseVisualStyleBackColor = false;
+            this.Btn14.Click += new System.EventHandler(this.Btn14_Click);
             // 
             // Btn13
             // 
@@ -162,6 +175,7 @@ namespace Sefer_otomasyon
             this.Btn13.TabIndex = 22;
             this.Btn13.Text = "13";
             this.Btn13.UseVisualStyleBackColor = false;
+            this.Btn13.Click += new System.EventHandler(this.Btn13_Click);
             // 
             // Btn10
             // 
@@ -173,6 +187,7 @@ namespace Sefer_otomasyon
             this.Btn10.TabIndex = 21;
             this.Btn10.Text = "10";
             this.Btn10.UseVisualStyleBackColor = false;
+            this.Btn10.Click += new System.EventHandler(this.Btn10_Click);
             // 
             // Btn11
             // 
@@ -184,6 +199,7 @@ namespace Sefer_otomasyon
             this.Btn11.TabIndex = 20;
             this.Btn11.Text = "11";
             this.Btn11.UseVisualStyleBackColor = false;
+            this.Btn11.Click += new System.EventHandler(this.Btn11_Click);
             // 
             // Btn7
             // 
@@ -195,6 +211,7 @@ namespace Sefer_otomasyon
             this.Btn7.TabIndex = 19;
             this.Btn7.Text = "7";
             this.Btn7.UseVisualStyleBackColor = false;
+            this.Btn7.Click += new System.EventHandler(this.Btn7_Click);
             // 
             // Btn8
             // 
@@ -206,6 +223,7 @@ namespace Sefer_otomasyon
             this.Btn8.TabIndex = 18;
             this.Btn8.Text = "8";
             this.Btn8.UseVisualStyleBackColor = false;
+            this.Btn8.Click += new System.EventHandler(this.Btn8_Click);
             // 
             // Btn4
             // 
@@ -217,6 +235,7 @@ namespace Sefer_otomasyon
             this.Btn4.TabIndex = 17;
             this.Btn4.Text = "4";
             this.Btn4.UseVisualStyleBackColor = false;
+            this.Btn4.Click += new System.EventHandler(this.Btn4_Click);
             // 
             // Btn5
             // 
@@ -228,6 +247,7 @@ namespace Sefer_otomasyon
             this.Btn5.TabIndex = 16;
             this.Btn5.Text = "5";
             this.Btn5.UseVisualStyleBackColor = false;
+            this.Btn5.Click += new System.EventHandler(this.Btn5_Click);
             // 
             // Btn2
             // 
@@ -239,6 +259,7 @@ namespace Sefer_otomasyon
             this.Btn2.TabIndex = 15;
             this.Btn2.Text = "2";
             this.Btn2.UseVisualStyleBackColor = false;
+            this.Btn2.Click += new System.EventHandler(this.Btn2_Click);
             // 
             // Btn1
             // 
@@ -250,6 +271,7 @@ namespace Sefer_otomasyon
             this.Btn1.TabIndex = 14;
             this.Btn1.Text = "1";
             this.Btn1.UseVisualStyleBackColor = false;
+            this.Btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
             // Btn18
             // 
@@ -261,6 +283,7 @@ namespace Sefer_otomasyon
             this.Btn18.TabIndex = 13;
             this.Btn18.Text = "18";
             this.Btn18.UseVisualStyleBackColor = false;
+            this.Btn18.Click += new System.EventHandler(this.Btn18_Click);
             // 
             // Btn15
             // 
@@ -272,6 +295,7 @@ namespace Sefer_otomasyon
             this.Btn15.TabIndex = 11;
             this.Btn15.Text = "15";
             this.Btn15.UseVisualStyleBackColor = false;
+            this.Btn15.Click += new System.EventHandler(this.Btn15_Click);
             // 
             // Btn12
             // 
@@ -283,6 +307,7 @@ namespace Sefer_otomasyon
             this.Btn12.TabIndex = 9;
             this.Btn12.Text = "12";
             this.Btn12.UseVisualStyleBackColor = false;
+            this.Btn12.Click += new System.EventHandler(this.Btn12_Click);
             // 
             // Btn9
             // 
@@ -294,6 +319,7 @@ namespace Sefer_otomasyon
             this.Btn9.TabIndex = 7;
             this.Btn9.Text = "9";
             this.Btn9.UseVisualStyleBackColor = false;
+            this.Btn9.Click += new System.EventHandler(this.Btn9_Click);
             // 
             // Btn6
             // 
@@ -305,6 +331,7 @@ namespace Sefer_otomasyon
             this.Btn6.TabIndex = 5;
             this.Btn6.Text = "6";
             this.Btn6.UseVisualStyleBackColor = false;
+            this.Btn6.Click += new System.EventHandler(this.Btn6_Click);
             // 
             // Btn3
             // 
@@ -316,6 +343,7 @@ namespace Sefer_otomasyon
             this.Btn3.TabIndex = 2;
             this.Btn3.Text = "3";
             this.Btn3.UseVisualStyleBackColor = false;
+            this.Btn3.Click += new System.EventHandler(this.Btn3_Click);
             // 
             // Btn0
             // 
@@ -338,6 +366,7 @@ namespace Sefer_otomasyon
             this.Btn16.TabIndex = 0;
             this.Btn16.Text = "16";
             this.Btn16.UseVisualStyleBackColor = false;
+            this.Btn16.Click += new System.EventHandler(this.Btn16_Click);
             // 
             // groupBox2
             // 
@@ -715,7 +744,7 @@ namespace Sefer_otomasyon
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label20);
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.Txtkoltukno);
             this.groupBox5.Controls.Add(this.Btnrezervasyon);
             this.groupBox5.Controls.Add(this.Msktxtyolcutc);
             this.groupBox5.Controls.Add(this.label18);
@@ -738,24 +767,25 @@ namespace Sefer_otomasyon
             this.label20.TabIndex = 27;
             this.label20.Text = "Koltuk No :";
             // 
-            // textBox1
+            // Txtkoltukno
             // 
-            this.textBox1.Location = new System.Drawing.Point(317, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(88, 24);
-            this.textBox1.TabIndex = 26;
+            this.Txtkoltukno.Location = new System.Drawing.Point(317, 49);
+            this.Txtkoltukno.Name = "Txtkoltukno";
+            this.Txtkoltukno.Size = new System.Drawing.Size(88, 24);
+            this.Txtkoltukno.TabIndex = 26;
             // 
             // Btnrezervasyon
             // 
             this.Btnrezervasyon.BackColor = System.Drawing.Color.Tomato;
             this.Btnrezervasyon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Btnrezervasyon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btnrezervasyon.Location = new System.Drawing.Point(91, 123);
+            this.Btnrezervasyon.Location = new System.Drawing.Point(91, 86);
             this.Btnrezervasyon.Name = "Btnrezervasyon";
             this.Btnrezervasyon.Size = new System.Drawing.Size(196, 56);
             this.Btnrezervasyon.TabIndex = 25;
             this.Btnrezervasyon.Text = "Rezervasyon Yap";
             this.Btnrezervasyon.UseVisualStyleBackColor = false;
+            this.Btnrezervasyon.Click += new System.EventHandler(this.Btnrezervasyon_Click);
             // 
             // Msktxtyolcutc
             // 
@@ -795,18 +825,78 @@ namespace Sefer_otomasyon
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.Güncelle);
             this.groupBox6.Location = new System.Drawing.Point(864, 413);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(364, 216);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.dataGridView1);
+            this.groupBox7.Location = new System.Drawing.Point(1234, 12);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(408, 395);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Sefer Listesi";
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 20);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(402, 372);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.dataGridView2);
+            this.groupBox8.Location = new System.Drawing.Point(1237, 413);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(405, 216);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Yolcu Listesi";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 20);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(399, 193);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Güncelle
+            // 
+            this.Güncelle.Location = new System.Drawing.Point(102, 65);
+            this.Güncelle.Name = "Güncelle";
+            this.Güncelle.Size = new System.Drawing.Size(159, 59);
+            this.Güncelle.TabIndex = 0;
+            this.Güncelle.Text = "Yolcu Listesini Güncelle";
+            this.Güncelle.UseVisualStyleBackColor = true;
+            this.Güncelle.Click += new System.EventHandler(this.Güncelle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tomato;
-            this.ClientSize = new System.Drawing.Size(1384, 632);
+            this.ClientSize = new System.Drawing.Size(1654, 632);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -818,6 +908,7 @@ namespace Sefer_otomasyon
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -827,6 +918,11 @@ namespace Sefer_otomasyon
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -898,8 +994,13 @@ namespace Sefer_otomasyon
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button Btnsfr;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txtkoltukno;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button Güncelle;
     }
 }
 
